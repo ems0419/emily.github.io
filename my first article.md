@@ -3,12 +3,12 @@
 * 如果某个特征的值只出现一次或者很少出现，则该模型无法根据该特征进行预测，因为每个值可能只出现一次或者少数几次，模型则无法从中学习任何规律。
 * 特征最好具有清晰明确的含义——每个特征对于项目中的任何人来说都应该具有清晰明确的含义。
 * 不要将某些“神奇”的值与实际数据混为一谈。在某些情况下，混乱的数据会导致含义不清晰的值。The following is an example of noisy/bad data. This should be avoided.  
-*    user_age: 277  
+                user_age: 277  
 良好的浮点特征不包含超出范围的异常断点或“神奇”的值。例如，假设一个特征具有 0 到 1 之间的浮点值。那么，如下值是可以接受的：  
-*    quality_rating: 0.82  
-    quality_rating: 0.37  
+                quality_rating: 0.82  
+                quality_rating: 0.37  
 不过，如果用户没有输入 quality_rating，则数据集可能使用如下神奇值来表示不存在该值：  
-    quality_rating: -1  
+                quality_rating: -1  
 为解决神奇值的问题，需将该特征转换为两个特征：  
 一个特征只存储质量评分，不含神奇值。  
 一个特征存储布尔值，表示是否提供了 quality_rating。为该布尔值特征指定一个名称，例如 is_quality_rating_defined。
